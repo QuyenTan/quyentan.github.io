@@ -1,0 +1,131 @@
+/* VARIABLES */
+:root {
+    --main-color: #E9E6E7;
+    --primary-accent-color: #5E5653;
+    --secondary-accent-color: #6B7C98;
+    --primary-testing-color: rgb(228, 15, 15);
+    --secondary-testing-color: rgb(55, 19, 215);
+}
+
+/* BASICS */
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins';
+    font-size: 12px;
+    line-height: 1.45;
+    background-color: var(--main-color);
+    background-repeat: repeat;
+    opacity: 0.8;
+    background-image: radial-gradient(circle, var(--secondary-accent-color) 1.2px, transparent 1.2px);
+    background-size: 20px 20px;
+    /* background-position: 0 0;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    animation: bg-scroll 200s linear infinite; */
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+hr {
+    border-top: 3px double;
+    border-radius: 1px;
+}
+
+@keyframes bg-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
+/* CONTAINERS */
+
+.landing-layout {
+    width: 700px;
+    max-width: calc(100% - 40px);
+    display: grid;
+    margin: 0 auto;
+    grid-gap: 10px;
+    grid-template:
+        "header"
+        "main-body"
+        "footer";
+    grid-template-columns: 1fr;
+    box-sizing: border-box;
+    
+}
+
+main-body {
+    grid-area: main-body;
+    background-color: var(--main-color);
+    border-color: var(--primary-accent-color);
+    border: 2px solid;
+    width: 100%;
+    height: 600px;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    scrollbar-color: transparent;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    padding: 20px 20px 20px 20px;
+    display: grid;
+    margin: 0 auto;
+    grid-gap: 10px;
+    grid-template:
+        "landing"
+        "walkthrough"
+        "about";
+}
+
+
+header { 
+    width: 100%;
+    height: 50px;
+    background-color: var(--secondary-accent-color);
+    grid-area: header; 
+}
+
+landing { 
+    height: 400px;
+    grid-area: landing; 
+}
+
+walkthrough { 
+    height: 400px;
+    grid-area: walkthrough; 
+}
+
+about { 
+    height: 400px;
+    grid-area: about; 
+}
+
+footer { 
+    width: 100%;
+    height: 30px;
+    background-color: var(--secondary-accent-color);
+    grid-area: footer; 
+}
+
+/* MISC. IMPORTS */
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
