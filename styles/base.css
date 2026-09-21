@@ -52,7 +52,6 @@ a {
 
 a:hover {
     color: var(--main-color);
-    background-color: var(--primary-accent-color);
     font-style: italic;
 }
 
@@ -70,7 +69,7 @@ a:hover {
 .landing-layout {
     width: 700px;
     max-width: calc(100% - 40px);
-    height: max-content;
+    max-height: 100vh;
     display: grid;
     margin: 0 auto;
     grid-gap: 10px;
@@ -89,7 +88,7 @@ main-body {
     border-color: var(--primary-accent-color);
     border: 2px solid;
     width: 100%;
-    height: 900px;
+    max-height: 80vh;
     overflow-y: scroll; 
     overflow-x: hidden;
     scrollbar-color: transparent;
@@ -122,26 +121,43 @@ header {
 landing { 
     padding: 50px;
     grid-area: landing; 
-    display: grid;
+    display: flex;
+    height: 80vh;
     grid-gap: 10px;
     grid-template-areas:
-        "title image"
-        "description description";
+        "title image";
     grid-template-columns: 1fr 1fr;
 }
 
-.landing-title {grid-area: title;}
-image {grid-area: image;}
-description {grid-area: description;}
+.landing-image{
+    grid-area: image;
+    width: 100%;
+}
+
+.landing-title {
+    grid-area: title;
+    max-width: 60%;
+    padding-right: 10%;
+}
+
+.landing-image img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-bottom: 20px;
+}
 
 walkthrough { 
     padding: 50px;
     grid-area: walkthrough; 
+    min-height: 80vh;
 }
 
 about { 
     padding: 50px;
     grid-area: about; 
+    min-height: 80vh;
 }
 
 footer { 
