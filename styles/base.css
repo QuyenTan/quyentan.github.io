@@ -31,12 +31,29 @@ h1 {
 }
 
 h2 {
+    font-size: 20px;
+}
+
+p {
     font-size: 15px;
 }
 
 hr {
     border-top: 3px double;
     border-radius: 1px;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+}
+
+a:hover {
+    color: var(--main-color);
+    background-color: var(--primary-accent-color);
+    font-style: italic;
 }
 
 @keyframes bg-scroll {
@@ -53,6 +70,7 @@ hr {
 .landing-layout {
     width: 700px;
     max-width: calc(100% - 40px);
+    height: max-content;
     display: grid;
     margin: 0 auto;
     grid-gap: 10px;
@@ -60,7 +78,7 @@ hr {
         "header"
         "main-body"
         "footer";
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     box-sizing: border-box;
     
 }
@@ -71,7 +89,7 @@ main-body {
     border-color: var(--primary-accent-color);
     border: 2px solid;
     width: 100%;
-    height: 600px;
+    height: 900px;
     overflow-y: scroll; 
     overflow-x: hidden;
     scrollbar-color: transparent;
@@ -93,20 +111,36 @@ header {
     height: 50px;
     background-color: var(--secondary-accent-color);
     grid-area: header; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 landing { 
-    height: 400px;
+    padding: 50px;
     grid-area: landing; 
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        "title image"
+        "description description";
+    grid-template-columns: 1fr 1fr;
 }
 
+.landing-title {grid-area: title;}
+image {grid-area: image;}
+description {grid-area: description;}
+
 walkthrough { 
-    height: 400px;
+    padding: 50px;
     grid-area: walkthrough; 
 }
 
 about { 
-    height: 400px;
+    padding: 50px;
     grid-area: about; 
 }
 
